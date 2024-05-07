@@ -1,0 +1,68 @@
+#fade3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2
+}
+
+#modal3 {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: #fff;
+    width: 850px;
+    max-width: 90%;
+    height: 500px;
+    padding: 1.25rem;
+    border-radius: 0.5rem
+}
+
+.warning3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.tabela-de-veiculo{
+    width: 30px;
+    height: 30px;
+}
+
+.modal-header3 {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.modal-body {
+    padding-top: 20px;
+    
+}
+
+#fade3.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#modal3.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal3.hide {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

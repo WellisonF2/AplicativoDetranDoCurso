@@ -1,0 +1,27 @@
+function consultarVeiculo() {
+    let id = document.getElementById("car-id").value;
+
+    fetch(`https://teste-3-ihc1.onrender.com/carros?id=${id}`)
+        .then(resposta => resposta.json())
+        .then(dadosCarros => {
+            let tabela = document.getElementById('tabela-consulta');
+            tabela.innerHTML = '';
+
+            dadosCarros.forEach(function(carro) {
+                let row = tabela.insertRow();
+                row.innerHTML = `
+                    <td>${carro.id}</td>
+                    <td>${carro.marca}</td>
+                    <td>${carro.modelo}</td>
+                    <td>${carro.ano}</td>
+                    <td>${carro.cor}</td>
+                    <td>${carro.placa}</td>
+                    <td>${carro.tipo}</td>
+                `;
+            });
+        });
+}
+
+document.querySelector('.btn-1').addEventListener('click', function() {
+    consultarVeiculo();
+});

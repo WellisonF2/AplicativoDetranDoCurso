@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Detran Digital</title>
+   <link rel="shortcut icon" href="/src/icon/icon-carro.png" type="image/x-icon">
+   <link rel="stylesheet" href="/src/style/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<span class="span"></span>
+   <nav class="nav">
+      <div class="navcontainer">
+      <img src="/src/img/Logo_Principal.png" alt="">
+         <ul class="nav-ul">
+            <li><a href="">INSTITUCIONAL</a></li>
+            <li><a href="">ATENDIMENTO</a></li>
+            <li><a href="">PARTICIPANTES</a></li>
+            <li><a href="">NOTÍCIAS</a></li>
+            <li><a href="">PERGUNTAS FREQUENTES</a></li>
+         </ul>
+         <h3>v1.0.0</h3>
+      </div>
+   </nav>
+
+<main>
+    <section>
+      <div class="color-band">
+         <div class="color-block" style="background-color: #2C3192;"></div>
+         <div class="color-block" style="background-color: #EC1F25;"></div>
+         <div class="color-block" style="background-color: #FFF100;"></div>
+         <div class="color-block" style="background-color: #F38221;"></div>
+         <div class="color-block" style="background-color: #00A551;"></div>
+      </div>
+   </section>
+
+   <section >
+      <div class="container">
+         <div class="information">
+            <h1 class="text-m">Embarque nesta jornada conosco <br> para explorar uma ampla variedade de opções de veículos.</h1>
+         </div>
+      </div>
+   </section>
+
+   <section id="botoes-layout">
+      <div id="btn">
+         <div id="btn-consultar">
+            <img src="/src/icon/consultar.png" class="consultar-icon">
+            <button id="open-modal" class="btn-consultar1">Consultar o Veiculo</button>
+         </div>
+
+         <div id="btn-cadastrar">
+            <img src="/src/icon/cadastrar.png" class="cadastrar-icon">
+            <button id="open-modal1" class="btn-cadastrar1">Cadastrar o Veiculo</button>
+         </div>
+
+         <div id="btn-tabela">
+            <img src="/src/icon/editar tabela.png" class="cadastrar-icon">
+            <button id="open-modal3" class="btn-tabela">Editar Tabela</button>
+         </div>
+      </div>
+   </section>
+
+   <section>
+      <div id="fade" class="hide"></div>
+  
+      <div id="modal1" class="hide">
+          <div class="modal-header">
+              <h2>Consultar Veiculo <img class="consultar-veiculo-icon" src="/src/icon/consultar_tabela.svg" alt=""></h2>
+              <button id="close-modal"><img src="/src/icon/close.svg" class="icon-consultar-veiculo"></button>
+          </div>
+          <div class="modal-body">
+              <label for="car-id">Insira a placa</label>
+              <input type="text" id="car-id">
+              <button class="btn-1">Consultar</button>
+          </div>
+          <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>ANO</th>
+                        <th>COR</th>
+                        <th>PLACA</th>
+                        <th>TIPO</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-consulta">
+                </tbody>
+            </table>
+        </div>
+      </div>
+  </section>
+  
+
+   <section>
+      <div id="fade1" class="hide"></div>
+
+      <div id="modal2" class="hide">
+         <div class="modal-header">
+            <h2>Cadastrar o Veiculo <img class="consultar-veiculo-icon" src="/src/icon/consultar_tabela.svg" alt=""></h2>
+            <button id="close-modal1"><img src="/src/icon/close.svg" class="icon-cadastrar-veiculo"></button>
+         </div>
+         <p class="warning2">Por favor, preencha todos os campos *</p>
+         <div class="modal-body2">
+            <div>
+               <label for="id">id</label>
+               <input type="text" id="id" pattern="\d*" oninput="this.value = this.value.replace(/\D/g,'')">
+
+               <label for="tipo">tipo</label>
+               <input type="text" id="tipo">
+            </div>
+
+            <div>
+               <label for="modelo">modelo</label>
+               <input type="text" id="modelo">
+
+               <label for="cor">cor</label>
+               <input type="text" id="cor">
+            </div>
+
+            <div>
+               <label for="marca">marca</label>
+               <input type="text" id="marca">
+
+               <label for="ano">ano</label>
+               <input type="text" id="ano" pattern="\d*" oninput="this.value = this.value.replace(/\D/g,'')">
+            </div>
+         </div>
+
+         <div>
+            <label for="placa">placa do veiculo</label>
+            <input type="text" id="placa">
+         </div>
+
+         <button class="cadastrarCarros" onclick="cadastrarCarros()">Cadastrar o veiculo</button>
+      </div>
+   </section>
+
+   <section>
+      <div id="fade3" class="hide"></div>
+      <div id="modal3" class="hide">
+          <div class="modal-header3">
+              <h2>Editar Veiculo Cadastrados na Tabela<img class="consultar-veiculo-icon" src="/src/icon/consultar_tabela.svg" alt=""></h2>
+              <button id="close-modal3"><img src="/src/icon/close.svg" class="tabela-de-veiculo"></button>
+          </div>
+          <p class="warning3">Aqui vai aparecer a tabela de veiculos cadastrados</p>
+          <div class="modal-body3">
+              <button id="btn-consultar1">Realizar Consultar</button>
+              <table id="tabela">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>TIPO</th>
+                          <th>MARCA</th>
+                          <th>MODELO</th>
+                          <th>ANO</th>
+                          <th>COR</th>
+                          <th>PLACA</th>
+                      </tr>
+                  </thead>
+                  <tbody id="tabela-de-carros">
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </section>
+
+</main>
+
+<footer>
+   <p>2024 &copy; DetranDigital - Todos os direitos reservados</p>
+   <p>Desenvolvido por: Wellison</p>
+</footer>
+
+<script src="/JavaScript/modal.js"></script>
+<script src="/JavaScript/tabela.js"></script>
+<script src="/JavaScript/TabelaVeiculo.js"></script>
+<script src="/JavaScript/CadastroVeiculo.js"></script>
+</body>
+</html>

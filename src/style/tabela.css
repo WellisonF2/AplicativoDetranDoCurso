@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    gap: 50px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
